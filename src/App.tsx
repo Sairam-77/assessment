@@ -100,17 +100,22 @@ function App() {
 
   return (
     <Flex justify={"center"} align={"center"} h={"100vh"}>
+
       <Button variant="filled" size="md" color='teal' onClick={open}>Save segmant</Button>
+
       <Drawer.Root opened={opened} onClose={close} position='right'>
         <Drawer.Overlay />
-        <Drawer.Content>
-          <Drawer.Header bg={"teal"}>
 
+        <Drawer.Content>
+
+          <Drawer.Header bg={"teal"}>
             <Drawer.Title c={"#fff"} fz={"20px"}>
               <span onClick={close} style={{ cursor: "pointer" }}><i className="fa-solid fa-chevron-left"></i></span>  Saving Segment
             </Drawer.Title>
           </Drawer.Header>
+
           <Drawer.Body py={10}>
+
             <TextInput
               py={5}
               placeholder='Name of the Segment'
@@ -123,6 +128,7 @@ function App() {
                 setsegmentName(e.target.value)
               }}
             />
+
             <Text lh={"xs"} fz={"15px"} c={"gray"} >To save your segment, you need to add the schemas to build the query</Text>
 
             {/* seleted schema */}
@@ -143,8 +149,8 @@ function App() {
 
             {/* to add schema */}
             <Flex direction={"column"} gap={10} py={10}>
-              <Select
 
+              <Select
                 placeholder="Add schema to segment"
                 value={seletedSchema}
                 data={availableSechema}
